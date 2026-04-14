@@ -1,0 +1,39 @@
+{
+    "[luau]": {
+        "editor.defaultFormatter": "JohnnyMorganz.stylua",
+        "editor.formatOnSave": true
+    },
+
+    "files.eol": "\n",
+
+    "luau-lsp.diagnostics.strictDatamodelTypes": true,
+    "luau-lsp.fflags.enableNewSolver": true,
+
+    "luau-lsp.ignoreGlobs": ["**/_Index/**"],
+
+    "luau-lsp.sourcemap.autogenerate": false,
+    "luau-lsp.completion.autocompleteEnd": true,
+    "luau-lsp.completion.imports.separateGroupsWithLine": true,
+
+    "files.exclude": {
+        ".git": true,
+        ".luaurc": true,
+        "wally.lock": true,
+        ".gitattributes": true,
+        "rokit.toml": true,
+        "Packages": true,
+        "DevPackages": true,
+        "ServerPackages": true,
+
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/sourcemap.json": true,
+        
+        "**/*.rbxl": true,
+        "**/*.rbxlx": true,
+        "**/*.rbxl.lock": true,
+        "**/*.rbxlx.lock": true,
+        "**/*.rbxm": true,
+        "**/*.rbxmx": true
+    }
+}

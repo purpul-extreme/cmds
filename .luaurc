@@ -1,0 +1,16 @@
+{
+  "languageMode": "strict",
+  "globals": [
+    "describe",
+    "xdescribe",
+    "fdescribe",
+    "it",
+    "xit",
+    "fit",
+    "beforeAll",
+    "afterAll",
+    "beforeEach",
+    "afterEach",
+    "expect"
+  ]
+}

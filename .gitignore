@@ -1,0 +1,19 @@
+# Wally
+Packages/
+DevPackages/
+ServerPackages/
+
+# Rojo
+sourcemap.json
+
+# Roblox binaries
+*.rbxl
+*.rbxlx
+*.rbxl.lock
+*.rbxlx.lock
+*.rbxm
+*.rbxmx
+
+# System
+.DS_Store
+Thumbs.db
