@@ -1,11 +1,11 @@
 {
-  "name": "package-test",
+  "name": "cmds-test",
   "tree": {
     "$className": "DataModel",
 
     "ReplicatedStorage": {
       "$className": "ReplicatedStorage",
-      "Package": {
+      "Cmds": {
         "$path": "src"
       },
       "DevPackages": {
