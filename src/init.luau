@@ -1,5 +1,6 @@
 local Players = game:GetService("Players")
 
+--- Defines the structure for a registered command.
 type CommandData = {
 	aliases: { string }?,
 	execute: (caller: Player, ...any) -> (),
@@ -12,6 +13,13 @@ local processedPlayers: { [Player]: boolean } = {}
 
 local Cmds = {}
 
+--[[
+    Checks if the message starts with the prefix, then finds and runs the
+    matching command, resolving aliases if needed.
+
+    @param message string -- The chat message.
+    @param player Player  -- The player who sent it.
+]]
 local function processMessage(message: string, player: Player)
 	if message:sub(1, #currentPrefix) ~= currentPrefix then
 		return
@@ -33,6 +41,10 @@ local function processMessage(message: string, player: Player)
 	end
 end
 
+--[[
+    Connects the player's chat to the command system on join.
+    Guards against being connected more than once.
+]]
 local function onPlayerAdded(player: Player)
 	if processedPlayers[player] then
 		return
@@ -43,14 +55,29 @@ local function onPlayerAdded(player: Player)
 	end)
 end
 
+--[[
+    Removes the player from the processed table when they leave.
+]]
 local function onPlayerRemoving(player: Player)
 	processedPlayers[player] = nil
 end
 
+--[[
+    Updates the prefix that all chat commands must start with.
+
+    @param prefix string -- The new prefix (e.g. "!", "/").
+]]
 function Cmds.SetPrefix(prefix: string)
 	currentPrefix = prefix
 end
 
+--[[
+    Registers a command by name and maps any aliases to it.
+    Errors if the name or any alias is already taken.
+
+    @param name string      -- The command name.
+    @param data CommandData -- The command definition.
+]]
 function Cmds.RegisterCommand(name: string, data: CommandData)
 	if commandRegistry[name] then
 		error(`[Cmds]: Command '{name}' is already registered`)

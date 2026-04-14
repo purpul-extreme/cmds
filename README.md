@@ -1,24 +1,23 @@
-# Package Template
+<h1 align="center">Cmds</h1>
+<p align="center">A simple admin command system.</p>
 
-A template for creating and publishing Roblox packages with [TestEZ](https://github.com/Roblox/testez) testing, [Selene](https://github.com/Kampfkarren/selene) linting, and [StyLua](https://github.com/JohnnyMorganz/StyLua) formatting preconfigured.
+## Installation
+Download the latest `.rbxm` file from [releases](https://github.com/purpul-extreme/Cmds/releases) and drag it into Roblox Studio.
 
-## Setup
+## Usage
+```lua
+local Cmds = require(ReplicatedStorage.Cmds)
 
-Download and install [Rokit](https://github.com/rojo-rbx/rokit/releases), then run:
-```sh
-rokit install
-wally install
+Cmds.RegisterCommand("kick", {
+    aliases = { "k" },
+    execute = function(player, target)
+        -- kick logic
+    end,
+})
 ```
 
-## File Structure
-```
-.
-├── src/                        # Package source code
-├── test/                       # Test scripts (TestEZ)
-├── default.project.json        # Rojo project for publishing
-├── test-place.project.json     # Rojo project for local development & testing
-├── wally.toml                  # Package manifest
-└── rokit.toml                  # Tool versions
-```
-
-Use `default.project.json` when building or publishing your package, and `test-place.project.json` when developing locally in Roblox Studio with your test scripts.
+## API
+| Function | Description |
+|---|---|
+| `Cmds.RegisterCommand(name, data)` | Registers a command with optional aliases |
+| `Cmds.SetPrefix(prefix)` | Sets the command prefix (default `!`) |
