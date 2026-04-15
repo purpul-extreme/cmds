@@ -3,6 +3,10 @@ local Cmds = require(ReplicatedStorage.Cmds)
 
 return function()
 	describe("RegisterCommand", function()
+		beforeEach(function()
+			Cmds.Reset()
+		end)
+
 		it("should register a command", function()
 			expect(function()
 				Cmds.RegisterCommand("test", {

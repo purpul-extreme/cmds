@@ -98,6 +98,15 @@ function Cmds.RegisterCommand(name: string, data: CommandData)
 	end
 end
 
+--[[
+    Clears all registered commands, aliases, and resets the prefix to its default.
+]]
+function Cmds.Reset()
+	currentPrefix = "!"
+	commandRegistry = {}
+	commandAliases = {}
+end
+
 Players.PlayerAdded:Connect(onPlayerAdded)
 Players.PlayerRemoving:Connect(onPlayerRemoving)
 
