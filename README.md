@@ -1,5 +1,13 @@
-<h1 align="center">Cmds</h1>
-<p align="center">A simple admin command system.</p>
+<div align="center">
+
+<h1>Cmds</h1>
+
+<p>A simple admin command system.</p>
+
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
+[![Version](https://img.shields.io/github/v/release/purpul-extreme/cmds)](../../releases)
+
+</div>
 
 ## Installation
 Download the latest `.rbxm` file from [releases](https://github.com/purpul-extreme/Cmds/releases) and drag it into Roblox Studio.
